@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>You-Wei Gan | Portfolio</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --primary: #0f172a; /* 專業深藍 */
+        --secondary: #3b82f6; /* 科技亮藍 */
+        --accent: #f59e0b; /* 重點金黃 */
+        --bg: #f8fafc;
+        --text: #334155;
+        --border: #e2e8f0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", "Segoe UI", Roboto, sans-serif;
+        line-height: 1.7;
+        color: var(--text);
+        background-color: var(--bg);
+        margin: 0;
+        overflow-x: hidden;
+      }
+
+      /* --- 導覽列 --- */
+      nav {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 1rem 5%;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        border-bottom: 1px solid var(--border);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      nav .logo {
+        font-weight: 800;
+        font-size: 1.5rem;
+        color: var(--primary);
+        letter-spacing: -0.5px;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 2rem;
+        margin: 0;
+        padding: 0;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: var(--text);
+        font-weight: 600;
+        transition: color 0.3s;
+      }
+
+      nav a:hover {
+        color: var(--secondary);
+      }
+
+      /* --- Hero Section: 左右分割設計 (圖左文右) --- */
+      .hero {
+        min-height: 90vh; /* 佔滿整個螢幕高度 */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: radial-gradient(
+          circle at top left,
+          #1e293b,
+          #0f172a
+        ); /* 調整漸層方向配合圖片在左 */
+        color: white;
+        padding: 2rem 5%;
+        position: relative;
+      }
+
+      .hero-container {
+        display: grid;
+        /* 修改這裡：改為 左圖(1fr) 右文(1.2fr) */
+        grid-template-columns: 1fr 1.2fr;
+        gap: 4rem;
+        max-width: 1300px;
+        width: 100%;
+        align-items: center;
+      }
+
+      /* 文字區 */
+      .hero-text {
+        z-index: 2;
+        text-align: left; /* 確保文字靠左對齊 */
+      }
+
+      .hero-badges {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-bottom: 2rem;
+      }
+
+      .badge {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 0.5rem 1rem;
+        border-radius: 50px;
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        backdrop-filter: blur(5px);
+      }
+
+      .badge.highlight {
+        background: var(--secondary);
+        border-color: var(--secondary);
+        color: white;
+        font-weight: bold;
+        box-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
+      }
+
+      .hero h1 {
+        font-size: 4.5rem; /* 超大標題 */
+        margin: 0 0 1rem;
+        line-height: 1.1;
+        font-weight: 800;
+        letter-spacing: -2px;
+        background: linear-gradient(to right, #fff, #94a3b8);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .hero .subtitle {
+        font-size: 1.5rem;
+        color: #cbd5e1;
+        margin-bottom: 3rem;
+        font-weight: 300;
+        line-height: 1.5;
+      }
+
+      .btn-group {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .btn {
+        padding: 1rem 2.5rem;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.1rem;
+        transition: all 0.3s;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.8rem;
+      }
+
+      .btn-primary {
+        background: var(--secondary);
+        color: white;
+        box-shadow: 0 10px 20px -5px rgba(59, 130, 246, 0.5);
+      }
+      .btn-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 30px -5px rgba(59, 130, 246, 0.7);
+      }
+
+      .btn-outline {
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        color: white;
+      }
+      .btn-outline:hover {
+        border-color: white;
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      /* 照片區 (大圖風格保持不變) */
+      .hero-image-container {
+        position: relative;
+        height: 600px; /* 固定高度 */
+        display: flex;
+        justify-content: center; /* 圖片居中 */
+        align-items: center;
+      }
+
+      .hero-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* 保持比例填滿 */
+        border-radius: 20px;
+        box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.5);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        mask-image: linear-gradient(
+          to bottom,
+          black 80%,
+          transparent 100%
+        ); /* 底部漸層淡出效果 */
+        -webkit-mask-image: linear-gradient(
+          to bottom,
+          black 80%,
+          transparent 100%
+        );
+      }
+
+      /* --- 一般區塊設定 --- */
+      section {
+        padding: 6rem 5%;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      h2 {
+        font-size: 2.5rem;
+        color: var(--primary);
+        margin-bottom: 3rem;
+        position: relative;
+        display: inline-block;
+      }
+
+      h2::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 5px;
+        background: var(--secondary);
+        margin-top: 0.5rem;
+        border-radius: 5px;
+        opacity: 0.3;
+      }
+
+      /* --- About & Stats --- */
+      .about-wrapper {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        gap: 4rem;
+        background: white;
+        padding: 3rem;
+        border-radius: 24px;
+        box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.05);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+      }
+
+      .rank-item {
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem 0;
+        border-bottom: 1px solid #f1f5f9;
+      }
+      .rank-value {
+        font-weight: 800;
+        color: var(--primary);
+        font-size: 1.2rem;
+      }
+      .rank-highlight {
+        color: var(--accent);
+      }
+
+      /* --- 成績單卡片 --- */
+      .courses-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-bottom: 3rem;
+      }
+
+      .course-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 16px;
+        border: 1px solid var(--border);
+        transition: all 0.3s;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .course-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.1);
+        border-color: var(--secondary);
+      }
+
+      .course-card.perfect {
+        border-top: 6px solid var(--accent);
+      }
+      .course-card.high {
+        border-top: 6px solid var(--secondary);
+      }
+
+      .course-score {
+        font-size: 3.5rem;
+        font-weight: 800;
+        color: var(--primary);
+        line-height: 1;
+        margin-bottom: 0.5rem;
+        letter-spacing: -2px;
+      }
+
+      .course-score span {
+        font-size: 1.2rem;
+        color: #94a3b8;
+        font-weight: 500;
+        letter-spacing: 0;
+        margin-left: 5px;
+      }
+
+      .course-name {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: #475569;
+      }
+
+      .transcript-btn {
+        display: block;
+        text-align: center;
+        background: var(--primary);
+        color: white;
+        padding: 1.5rem;
+        border-radius: 12px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.1rem;
+        transition: background 0.3s;
+      }
+      .transcript-btn:hover {
+        background: #1e293b;
+      }
+
+      /* --- Projects --- */
+      .project-card {
+        background: white;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        margin-bottom: 3rem;
+        display: grid;
+        grid-template-columns: 1fr;
+        border: 1px solid var(--border);
+      }
+
+      @media (min-width: 900px) {
+        .project-card {
+          grid-template-columns: 400px 1fr;
+        }
+      }
+
+      .project-img {
+        min-height: 300px;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .img-quantum {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+      .img-mwd {
+        background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+      }
+
+      .project-content {
+        padding: 3rem;
+      }
+      .project-tags span {
+        background: #f1f5f9;
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: #475569;
+        margin-right: 8px;
+      }
+
+      /* --- RWD 手機適配 --- */
+      @media (max-width: 900px) {
+        .hero-container {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+        /* 手機版時，讓圖片在上面，文字在下面 (透過 Flexbox order 調整) */
+        .hero-container {
+          display: flex;
+          flex-direction: column;
+        }
+        .hero-image-container {
+          order: 1;
+          height: 400px;
+          margin-bottom: 2rem;
+          width: 100%;
+        }
+        .hero-text {
+          order: 2;
+        }
+
+        .hero h1 {
+          font-size: 3rem;
+        }
+        .hero-badges,
+        .btn-group {
+          justify-content: center;
+        }
+        .about-wrapper {
+          grid-template-columns: 1fr;
+          padding: 2rem;
+        }
+        nav ul {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">You-Wei Gan</div>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#academics">Academics</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <header class="hero">
+      <div class="hero-container">
+        <div class="hero-image-container">
+          <img
+            src="assets/profile.jpg"
+            alt="甘侑偉 You-Wei Gan"
+            class="hero-image"
+          />
+        </div>
+
+        <div class="hero-text">
+          <div class="hero-badges">
+            <div class="badge highlight">
+              <i class="fas fa-trophy"></i> IEEE QCE 2025 Author
+            </div>
+            <div class="badge"><i class="fas fa-university"></i> NPTU CSIE</div>
+          </div>
+          <h1>
+            甘侑偉<br /><span
+              style="font-size: 0.5em; font-weight: 300; color: #94a3b8"
+              >You-Wei Gan</span
+            >
+          </h1>
+          <div class="subtitle">
+            Undergraduate Researcher in<br /><strong>Quantum Computing</strong>
+            & <strong>System Optimization</strong>
+          </div>
+
+          <div class="btn-group">
+            <a href="#research" class="btn btn-primary"
+              ><i class="fas fa-arrow-down"></i> View Publications</a
+            >
+            <a href="mailto:a0982848928@gmail.com" class="btn btn-outline"
+              ><i class="fas fa-envelope"></i> Email Me</a
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="about">
+      <h2>About Me</h2>
+      <div class="about-wrapper">
+        <div class="bio">
+          <p style="font-size: 1.1rem; color: #475569">
+            我是國立屏東大學資訊工程學系的大四學生。我的學術旅程始於義守大學，後轉學至屏東大學。這段經歷培養了我高度的適應力與抗壓性，讓我在新環境中不僅快速跟上，更在競爭激烈的課程中脫穎而出。
+          </p>
+          <p style="font-size: 1.1rem; color: #475569">
+            我專注於 <strong>系統程式 (System Programming)</strong> 與
+            <strong>演算法優化</strong
+            >。透過專題研究，我成功將量子啟發式演算法應用於實際問題，並獲得 IEEE
+            國際研討會的肯定。
+          </p>
+        </div>
+        <div class="stats">
+          <h3 style="margin-top: 0; color: var(--primary)">Academic Ranking</h3>
+          <div class="rank-item">
+            <span>系排名 (Dept. Rank)</span>
+            <span class="rank-value">5 / 86</span>
+          </div>
+          <div class="rank-item">
+            <span>班排名 (Class Rank)</span>
+            <span class="rank-value">4 / 42</span>
+          </div>
+          <div class="rank-item">
+            <span>學業平均 (GPA)</span>
+            <span class="rank-value">91.55</span>
+          </div>
+          <div class="rank-item" style="border: none">
+            <span>榮譽 (Award)</span>
+            <span class="rank-value rank-highlight"
+              ><i class="fas fa-medal"></i> 書卷獎第一名</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="academics">
+      <h2>Core Coursework</h2>
+      <p style="margin-bottom: 2rem; color: #64748b">
+        基於最新成績單 (113學年度) 之重點科目表現。
+      </p>
+
+      <div class="courses-grid">
+        <div class="course-card perfect">
+          <div class="course-score">100<span>/100</span></div>
+          <div class="course-name">
+            <i class="fas fa-microchip"></i> Operating Systems
+          </div>
+          <p style="color: #94a3b8; font-size: 0.9rem; margin: 5px 0 0">
+            作業系統
+          </p>
+        </div>
+
+        <div class="course-card high">
+          <div class="course-score">99<span>/100</span></div>
+          <div class="course-name">
+            <i class="fab fa-linux"></i> Linux Practical Intro
+          </div>
+          <p style="color: #94a3b8; font-size: 0.9rem; margin: 5px 0 0">
+            Linux 實務導論
+          </p>
+        </div>
+
+        <div class="course-card high">
+          <div class="course-score">98<span>/100</span></div>
+          <div class="course-name">
+            <i class="fas fa-code-branch"></i> Algorithms
+          </div>
+          <p style="color: #94a3b8; font-size: 0.9rem; margin: 5px 0 0">
+            演算法
+          </p>
+        </div>
+
+        <div class="course-card high">
+          <div class="course-score">98<span>/100</span></div>
+          <div class="course-name">
+            <i class="fas fa-project-diagram"></i> Data Structures
+          </div>
+          <p style="color: #94a3b8; font-size: 0.9rem; margin: 5px 0 0">
+            資料結構
+          </p>
+        </div>
+
+        <div class="course-card high">
+          <div class="course-score">98<span>/100</span></div>
+          <div class="course-name">
+            <i class="fas fa-database"></i> Database Systems
+          </div>
+          <p style="color: #94a3b8; font-size: 0.9rem; margin: 5px 0 0">
+            資料庫系統導論
+          </p>
+        </div>
+
+        <div class="course-card high">
+          <div class="course-score">97<span>/100</span></div>
+          <div class="course-name">
+            <i class="fas fa-terminal"></i> System Programming
+          </div>
+          <p style="color: #94a3b8; font-size: 0.9rem; margin: 5px 0 0">
+            系統程式
+          </p>
+        </div>
+      </div>
+
+      <a href="assets/transcript.pdf" target="_blank" class="transcript-btn">
+        <i class="fas fa-file-pdf"></i> View Full Transcript (PDF)
+      </a>
+    </section>
+
+    <section id="research">
+      <h2>Featured Research</h2>
+
+      <div class="project-card">
+        <div class="project-img img-quantum">
+          <i class="fas fa-atom fa-4x" style="color: white"></i>
+        </div>
+        <div class="project-content">
+          <span
+            style="
+              color: var(--secondary);
+              font-weight: 800;
+              font-size: 0.9rem;
+              text-transform: uppercase;
+            "
+            >Accepted @ IEEE QCE 2025</span
+          >
+          <h3
+            style="margin-top: 10px; font-size: 1.5rem; color: var(--primary)"
+          >
+            Quantum-inspired Optimization via CGA: Fertilizer Allocation
+          </h3>
+          <p style="color: #64748b; margin-bottom: 1.5rem">
+            針對農業施肥過量問題，將肥料配置轉化為 QUBO 數學模型。利用 Compal
+            GPU Annealer (CGA) 進行求解，實現成本最小化。
+          </p>
+          <div class="project-tags">
+            <span>Python</span><span>QUBO</span><span>Quantum Annealing</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-img img-mwd">
+          <i class="fas fa-store fa-4x" style="color: white"></i>
+        </div>
+        <div class="project-content">
+          <span
+            style="
+              color: var(--secondary);
+              font-weight: 800;
+              font-size: 0.9rem;
+              text-transform: uppercase;
+            "
+            >Industry Cooperation</span
+          >
+          <h3
+            style="margin-top: 10px; font-size: 1.5rem; color: var(--primary)"
+          >
+            Smart Scheduling System (My Warm Day)
+          </h3>
+          <p style="color: #64748b; margin-bottom: 1.5rem">
+            與連鎖早餐店「麥味登」合作。考量勞基法規與技能配置，利用優化演算法自動生成公平排班表。
+          </p>
+          <div class="project-tags">
+            <span>Optimization</span><span>API Integration</span
+            ><span>System Design</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer
+      id="contact"
+      style="
+        text-align: center;
+        padding: 4rem 0;
+        background: var(--primary);
+        color: #94a3b8;
+      "
+    >
+      <h3 style="color: white">Contact Me</h3>
+      <p style="margin: 1rem 0">
+        <a
+          href="mailto:a0982848928@gmail.com"
+          style="color: white; text-decoration: none; font-size: 1.2rem"
+        >
+          <i class="fas fa-envelope"></i> a0982848928@gmail.com
+        </a>
+      </p>
+      <p style="font-size: 0.9rem; opacity: 0.7">
+        &copy; 2025 You-Wei Gan. All Rights Reserved.
+      </p>
+    </footer>
+  </body>
+</html>
