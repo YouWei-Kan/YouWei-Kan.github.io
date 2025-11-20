@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>You-Wei Gan | Portfolio</title>
+    <title>You-Wei Kan | Portfolio</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -77,11 +77,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background: radial-gradient(
-          circle at top left,
-          #1e293b,
-          #0f172a
-        ); /* 調整漸層方向配合圖片在左 */
+        background: radial-gradient(circle at top left, #1e293b, #0f172a);
         color: white;
         padding: 2rem 5%;
         position: relative;
@@ -89,8 +85,7 @@
 
       .hero-container {
         display: grid;
-        /* 修改這裡：改為 左圖(1fr) 右文(1.2fr) */
-        grid-template-columns: 1fr 1.2fr;
+        grid-template-columns: 1fr 1.2fr; /* 左圖 右文 */
         gap: 4rem;
         max-width: 1300px;
         width: 100%;
@@ -100,14 +95,14 @@
       /* 文字區 */
       .hero-text {
         z-index: 2;
-        text-align: left; /* 確保文字靠左對齊 */
+        text-align: left;
       }
 
       .hero-badges {
         display: flex;
         gap: 1rem;
         flex-wrap: wrap;
-        margin-bottom: 2rem;
+        margin-bottom: 1.5rem;
       }
 
       .badge {
@@ -130,8 +125,21 @@
         box-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
       }
 
+      /* 新增：學校大標題樣式 */
+      .school-title {
+        font-size: 2rem;
+        font-weight: 800;
+        color: var(--secondary); /* 用亮藍色強調 */
+        margin: 0 0 0.5rem 0;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        letter-spacing: 1px;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      }
+
       .hero h1 {
-        font-size: 4.5rem; /* 超大標題 */
+        font-size: 4.5rem;
         margin: 0 0 1rem;
         line-height: 1.1;
         font-weight: 800;
@@ -185,27 +193,23 @@
         background: rgba(255, 255, 255, 0.1);
       }
 
-      /* 照片區 (大圖風格保持不變) */
+      /* 照片區 */
       .hero-image-container {
         position: relative;
-        height: 600px; /* 固定高度 */
+        height: 600px;
         display: flex;
-        justify-content: center; /* 圖片居中 */
+        justify-content: center;
         align-items: center;
       }
 
       .hero-image {
         width: 100%;
         height: 100%;
-        object-fit: cover; /* 保持比例填滿 */
+        object-fit: cover;
         border-radius: 20px;
         box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.5);
         border: 1px solid rgba(255, 255, 255, 0.1);
-        mask-image: linear-gradient(
-          to bottom,
-          black 80%,
-          transparent 100%
-        ); /* 底部漸層淡出效果 */
+        mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
         -webkit-mask-image: linear-gradient(
           to bottom,
           black 80%,
@@ -213,13 +217,12 @@
         );
       }
 
-      /* --- 一般區塊設定 --- */
+      /* --- 一般區塊 --- */
       section {
         padding: 6rem 5%;
         max-width: 1200px;
         margin: 0 auto;
       }
-
       h2 {
         font-size: 2.5rem;
         color: var(--primary);
@@ -227,7 +230,6 @@
         position: relative;
         display: inline-block;
       }
-
       h2::after {
         content: "";
         display: block;
@@ -239,7 +241,7 @@
         opacity: 0.3;
       }
 
-      /* --- About & Stats --- */
+      /* --- About --- */
       .about-wrapper {
         display: grid;
         grid-template-columns: 1.5fr 1fr;
@@ -248,9 +250,7 @@
         padding: 3rem;
         border-radius: 24px;
         box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.05);
-        border: 1px solid rgba(0, 0, 0, 0.05);
       }
-
       .rank-item {
         display: flex;
         justify-content: space-between;
@@ -266,37 +266,32 @@
         color: var(--accent);
       }
 
-      /* --- 成績單卡片 --- */
+      /* --- Courses --- */
       .courses-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
         gap: 2rem;
         margin-bottom: 3rem;
       }
-
       .course-card {
         background: white;
         padding: 2rem;
         border-radius: 16px;
         border: 1px solid var(--border);
         transition: all 0.3s;
-        position: relative;
         overflow: hidden;
       }
-
       .course-card:hover {
         transform: translateY(-8px);
         box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.1);
         border-color: var(--secondary);
       }
-
       .course-card.perfect {
         border-top: 6px solid var(--accent);
       }
       .course-card.high {
         border-top: 6px solid var(--secondary);
       }
-
       .course-score {
         font-size: 3.5rem;
         font-weight: 800;
@@ -305,7 +300,6 @@
         margin-bottom: 0.5rem;
         letter-spacing: -2px;
       }
-
       .course-score span {
         font-size: 1.2rem;
         color: #94a3b8;
@@ -313,13 +307,11 @@
         letter-spacing: 0;
         margin-left: 5px;
       }
-
       .course-name {
         font-size: 1.1rem;
         font-weight: 700;
         color: #475569;
       }
-
       .transcript-btn {
         display: block;
         text-align: center;
@@ -329,11 +321,40 @@
         border-radius: 12px;
         text-decoration: none;
         font-weight: bold;
-        font-size: 1.1rem;
         transition: background 0.3s;
       }
       .transcript-btn:hover {
         background: #1e293b;
+      }
+
+      /* --- Skills --- */
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+      }
+      .skill-category {
+        background: white;
+        padding: 2rem;
+        border-radius: 16px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        border-top: 4px solid var(--secondary);
+        text-align: center;
+      }
+      .skill-icon {
+        font-size: 2.5rem;
+        color: var(--primary);
+        margin-bottom: 1rem;
+      }
+      .skill-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .skill-list li {
+        margin-bottom: 0.5rem;
+        color: #475569;
+        font-weight: 600;
       }
 
       /* --- Projects --- */
@@ -347,13 +368,11 @@
         grid-template-columns: 1fr;
         border: 1px solid var(--border);
       }
-
       @media (min-width: 900px) {
         .project-card {
           grid-template-columns: 400px 1fr;
         }
       }
-
       .project-img {
         min-height: 300px;
         background-size: cover;
@@ -362,14 +381,12 @@
         align-items: center;
         justify-content: center;
       }
-
       .img-quantum {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       }
       .img-mwd {
         background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
       }
-
       .project-content {
         padding: 3rem;
       }
@@ -383,13 +400,64 @@
         margin-right: 8px;
       }
 
-      /* --- RWD 手機適配 --- */
+      /* --- Roadmap --- */
+      .roadmap-box {
+        background: white;
+        padding: 3rem;
+        border-radius: 20px;
+        border-left: 5px solid var(--accent);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      }
+      .roadmap-step {
+        margin-bottom: 2rem;
+        position: relative;
+        padding-left: 2rem;
+      }
+      .roadmap-step::before {
+        content: "●";
+        color: var(--accent);
+        position: absolute;
+        left: 0;
+        font-size: 1.2rem;
+      }
+      .roadmap-title {
+        font-weight: 800;
+        color: var(--primary);
+        margin-bottom: 0.5rem;
+        display: block;
+      }
+
+      /* --- Timeline --- */
+      .timeline-item {
+        display: flex;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+        align-items: flex-start;
+      }
+      .timeline-date {
+        background: var(--primary);
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+        font-weight: bold;
+        font-size: 0.9rem;
+        white-space: nowrap;
+        min-width: 120px;
+        text-align: center;
+      }
+      .timeline-content h4 {
+        margin: 0 0 0.5rem 0;
+        color: var(--primary);
+        font-size: 1.2rem;
+      }
+      .timeline-content p {
+        margin: 0;
+        color: #64748b;
+        font-size: 0.95rem;
+      }
+
+      /* --- RWD --- */
       @media (max-width: 900px) {
-        .hero-container {
-          grid-template-columns: 1fr;
-          text-align: center;
-        }
-        /* 手機版時，讓圖片在上面，文字在下面 (透過 Flexbox order 調整) */
         .hero-container {
           display: flex;
           flex-direction: column;
@@ -402,8 +470,12 @@
         }
         .hero-text {
           order: 2;
+          text-align: center;
         }
-
+        .school-title {
+          justify-content: center;
+          font-size: 1.5rem;
+        } /* 手機版置中且字體稍微調小 */
         .hero h1 {
           font-size: 3rem;
         }
@@ -423,12 +495,13 @@
   </head>
   <body>
     <nav>
-      <div class="logo">You-Wei Gan</div>
+      <div class="logo">You-Wei Kan</div>
       <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#academics">Academics</a></li>
         <li><a href="#research">Research</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
       </ul>
     </nav>
 
@@ -437,7 +510,7 @@
         <div class="hero-image-container">
           <img
             src="assets/profile.jpg"
-            alt="甘侑偉 You-Wei Gan"
+            alt="甘侑偉 You-Wei Kan"
             class="hero-image"
           />
         </div>
@@ -447,17 +520,21 @@
             <div class="badge highlight">
               <i class="fas fa-trophy"></i> IEEE QCE 2025 Author
             </div>
-            <div class="badge"><i class="fas fa-university"></i> NPTU CSIE</div>
           </div>
+
+          <div class="school-title">
+            <i class="fas fa-university"></i> 國立屏東大學 資訊工程學系
+          </div>
+
           <h1>
             甘侑偉<br /><span
               style="font-size: 0.5em; font-weight: 300; color: #94a3b8"
-              >You-Wei Gan</span
+              >You-Wei Kan</span
             >
           </h1>
           <div class="subtitle">
             Undergraduate Researcher in<br /><strong>Quantum Computing</strong>
-            & <strong>System Optimization</strong>
+            & <strong>Combinatorial Optimization</strong>
           </div>
 
           <div class="btn-group">
@@ -480,10 +557,10 @@
             我是國立屏東大學資訊工程學系的大四學生。我的學術旅程始於義守大學，後轉學至屏東大學。這段經歷培養了我高度的適應力與抗壓性，讓我在新環境中不僅快速跟上，更在競爭激烈的課程中脫穎而出。
           </p>
           <p style="font-size: 1.1rem; color: #475569">
-            我專注於 <strong>系統程式 (System Programming)</strong> 與
-            <strong>演算法優化</strong
-            >。透過專題研究，我成功將量子啟發式演算法應用於實際問題，並獲得 IEEE
-            國際研討會的肯定。
+            我專注於
+            <strong>量子計算在組合最佳化問題上的應用</strong>
+            。在專題研究中，我將量子啟發式演算法導入現實生活中的組合問題，例如肥料配置與資源分配，實驗成果也獲得了
+            <strong>IEEE 國際研討會</strong>的肯定。
           </p>
         </div>
         <div class="stats">
@@ -503,7 +580,7 @@
           <div class="rank-item" style="border: none">
             <span>榮譽 (Award)</span>
             <span class="rank-value rank-highlight"
-              ><i class="fas fa-medal"></i> 書卷獎第一名</span
+              ><i class="fas fa-medal"></i> 書卷獎第一名(大三下)</span
             >
           </div>
         </div>
@@ -524,16 +601,6 @@
           </div>
           <p style="color: #94a3b8; font-size: 0.9rem; margin: 5px 0 0">
             作業系統
-          </p>
-        </div>
-
-        <div class="course-card high">
-          <div class="course-score">99<span>/100</span></div>
-          <div class="course-name">
-            <i class="fab fa-linux"></i> Linux Practical Intro
-          </div>
-          <p style="color: #94a3b8; font-size: 0.9rem; margin: 5px 0 0">
-            Linux 實務導論
           </p>
         </div>
 
@@ -560,6 +627,36 @@
         <div class="course-card high">
           <div class="course-score">98<span>/100</span></div>
           <div class="course-name">
+            <i class="fas fa-calculator"></i> Linear Algebra
+          </div>
+          <p style="color: #94a3b8; font-size: 0.9rem; margin: 5px 0 0">
+            線性代數
+          </p>
+        </div>
+
+        <div class="course-card high">
+          <div class="course-score">93<span>/100</span></div>
+          <div class="course-name">
+            <i class="fas fa-memory"></i> Computer Architecture
+          </div>
+          <p style="color: #94a3b8; font-size: 0.9rem; margin: 5px 0 0">
+            計算機結構
+          </p>
+        </div>
+
+        <div class="course-card high">
+          <div class="course-score">99<span>/100</span></div>
+          <div class="course-name">
+            <i class="fab fa-linux"></i> Linux Practical Intro
+          </div>
+          <p style="color: #94a3b8; font-size: 0.9rem; margin: 5px 0 0">
+            Linux 實務導論
+          </p>
+        </div>
+
+        <div class="course-card high">
+          <div class="course-score">98<span>/100</span></div>
+          <div class="course-name">
             <i class="fas fa-database"></i> Database Systems
           </div>
           <p style="color: #94a3b8; font-size: 0.9rem; margin: 5px 0 0">
@@ -579,7 +676,7 @@
       </div>
 
       <a href="assets/transcript.pdf" target="_blank" class="transcript-btn">
-        <i class="fas fa-file-pdf"></i> View Full Transcript (PDF)
+        <i class="fas fa-file-pdf"></i> 歷年成績單 (PDF)
       </a>
     </section>
 
@@ -588,14 +685,24 @@
 
       <div class="project-card">
         <div class="project-img img-quantum">
-          <i class="fas fa-atom fa-4x" style="color: white"></i>
+          <span class="fa-stack fa-3x">
+            <i
+              class="fas fa-atom fa-stack-2x"
+              style="color: rgba(255, 255, 255, 0.9)"
+            ></i>
+            <i
+              class="fas fa-seedling fa-stack-1x"
+              style="color: #a3e635; transform: scale(0.5) translateY(5px)"
+            ></i>
+          </span>
         </div>
+
         <div class="project-content">
           <span
             style="
               color: var(--secondary);
               font-weight: 800;
-              font-size: 0.9rem;
+              font-size: 1.5rem;
               text-transform: uppercase;
             "
             >Accepted @ IEEE QCE 2025</span
@@ -616,15 +723,29 @@
       </div>
 
       <div class="project-card">
-        <div class="project-img img-mwd">
-          <i class="fas fa-store fa-4x" style="color: white"></i>
+        <div class="project-img img-mwd" style="gap: 20px">
+          <i
+            class="fas fa-store fa-4x"
+            style="
+              color: rgba(255, 255, 255, 0.95);
+              filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
+            "
+          ></i>
+          <i
+            class="fas fa-calendar-days fa-4x"
+            style="
+              color: rgba(255, 255, 255, 0.95);
+              filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
+            "
+          ></i>
         </div>
+
         <div class="project-content">
           <span
             style="
               color: var(--secondary);
               font-weight: 800;
-              font-size: 0.9rem;
+              font-size: 1.5rem;
               text-transform: uppercase;
             "
             >Industry Cooperation</span
@@ -637,10 +758,187 @@
           <p style="color: #64748b; margin-bottom: 1.5rem">
             與連鎖早餐店「麥味登」合作。考量勞基法規與技能配置，利用優化演算法自動生成公平排班表。
           </p>
+
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 1rem;
+              margin-bottom: 1.5rem;
+            "
+          >
+            <div style="text-align: center">
+              <a href="assets/qubo_matrix.png" target="_blank">
+                <img
+                  src="assets/qubo_matrix.png"
+                  alt="QUBO Matrix"
+                  style="
+                    width: 100%;
+                    max-width: 260px;
+                    height: auto;
+                    border-radius: 8px;
+                    border: 1px solid #e2e8f0;
+                    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+                    transition: transform 0.2s;
+                  "
+                />
+              </a>
+              <p
+                style="
+                  font-size: 0.85rem;
+                  color: #64748b;
+                  margin-top: 10px;
+                  margin-bottom: 0;
+                  font-weight: bold;
+                "
+              >
+                <i class="fas fa-code"></i> QUBO Matrix Output
+              </p>
+            </div>
+
+            <div style="text-align: center">
+              <a href="assets/schedule_result.png" target="_blank">
+                <img
+                  src="assets/schedule_result.png"
+                  alt="Schedule Result"
+                  style="
+                    width: 100%;
+                    max-width: 260px;
+                    height: auto;
+                    border-radius: 8px;
+                    border: 1px solid #e2e8f0;
+                    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+                    transition: transform 0.2s;
+                  "
+                />
+              </a>
+              <p
+                style="
+                  font-size: 0.85rem;
+                  color: #64748b;
+                  margin-top: 10px;
+                  margin-bottom: 0;
+                  font-weight: bold;
+                "
+              >
+                <i class="fas fa-table"></i> Optimized Schedule
+              </p>
+            </div>
+          </div>
+
           <div class="project-tags">
             <span>Optimization</span><span>API Integration</span
             ><span>System Design</span>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" style="background: white">
+      <h2>Technical Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <div class="skill-icon"><i class="fas fa-code"></i></div>
+          <h3 style="margin-bottom: 1rem">Languages</h3>
+          <ul class="skill-list">
+            <li>Python (Advanced)</li>
+            <li>C / C++</li>
+            <li>LaTeX (Academic Writing)</li>
+            <li>SQL</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <div class="skill-icon"><i class="fas fa-server"></i></div>
+          <h3 style="margin-bottom: 1rem">System & Tools</h3>
+          <ul class="skill-list">
+            <li>Linux Administration</li>
+            <li>Git / GitHub</li>
+            <li>Docker</li>
+            <li>VS Code</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <div class="skill-icon"><i class="fas fa-brain"></i></div>
+          <h3 style="margin-bottom: 1rem">Research Areas</h3>
+          <ul class="skill-list">
+            <li>Quantum Annealing</li>
+            <li>QUBO Optimization</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2>Experience & Honors</h2>
+      <div style="max-width: 800px; margin: 0 auto">
+        <div class="timeline-item">
+          <div class="timeline-date">2024 - Present</div>
+          <div class="timeline-content">
+            <h4>Undergraduate Research Assistant</h4>
+            <p>
+              國立屏東大學 |
+              協助執行量子計算相關研究計畫，負責演算法實作與數據分析。
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">2024–2025 (Junior Year)</div>
+          <div class="timeline-content">
+            <h4>Academic Excellence Award (1st Place)</h4>
+            <p>書卷獎第一名 | 該學期學業成績表現優異，班級排名 Top 1。</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">2025</div>
+          <div class="timeline-content">
+            <h4>Exhibitor @ Great South AI Expo</h4>
+            <p>
+              大南方 AI 研發亮點成果展 |
+              展示實驗室研究成果，與產業界人士進行技術交流。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="roadmap" style="background-color: #f8fafc">
+      <h2>Graduate Research Plan</h2>
+      <p style="margin-bottom: 2rem">
+        基於過去在資源配置優化的經驗，我計畫在研究所階段延伸至 AI 領域：
+      </p>
+
+      <div class="roadmap-box">
+        <h3
+          style="
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+          "
+        >
+          主題：結合 AI 技術的資源配置優化與永續發展
+        </h3>
+
+        <div class="roadmap-step">
+          <span class="roadmap-title"
+            >Phase 1: Deep Reinforcement Learning (DRL)</span
+          >
+          研究如何利用強化學習 (RL)
+          代理人，動態調整量子退火參數，以提升在複雜環境下的求解品質。
+        </div>
+
+        <div class="roadmap-step">
+          <span class="roadmap-title">Phase 2: Hybrid Optimization Models</span>
+          開發結合「傳統啟發式演算法」與「量子計算」的混合模型，解決大規模工業級排程問題（如智慧物流、電路佈局）。
+        </div>
+
+        <div class="roadmap-step">
+          <span class="roadmap-title"
+            >Phase 3: Real-world Application Verification</span
+          >
+          利用模擬數據與真實案例測試，驗證 AI
+          優化方法在效率與成本控制上是否顯著優於傳統規則。
         </div>
       </div>
     </section>
@@ -664,7 +962,7 @@
         </a>
       </p>
       <p style="font-size: 0.9rem; opacity: 0.7">
-        &copy; 2025 You-Wei Gan. All Rights Reserved.
+        &copy; 2025 You-Wei Kan. All Rights Reserved.
       </p>
     </footer>
   </body>
