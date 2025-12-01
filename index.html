@@ -10,9 +10,9 @@
     />
     <style>
       :root {
-        --primary: #0f172a; /* 專業深藍 */
-        --secondary: #3b82f6; /* 科技亮藍 */
-        --accent: #f59e0b; /* 重點金黃 */
+        --primary: #0f172a;
+        --secondary: #3b82f6;
+        --accent: #f59e0b;
         --bg: #f8fafc;
         --text: #334155;
         --border: #e2e8f0;
@@ -71,9 +71,9 @@
         color: var(--secondary);
       }
 
-      /* --- Hero Section: 左右分割設計 (圖左文右) --- */
+      /* --- Hero Section --- */
       .hero {
-        min-height: 90vh; /* 佔滿整個螢幕高度 */
+        min-height: 90vh;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -85,14 +85,13 @@
 
       .hero-container {
         display: grid;
-        grid-template-columns: 1fr 1.2fr; /* 左圖 右文 */
+        grid-template-columns: 1fr 1.2fr;
         gap: 4rem;
         max-width: 1300px;
         width: 100%;
         align-items: center;
       }
 
-      /* 文字區 */
       .hero-text {
         z-index: 2;
         text-align: left;
@@ -125,11 +124,10 @@
         box-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
       }
 
-      /* 新增：學校大標題樣式 */
       .school-title {
         font-size: 2rem;
         font-weight: 800;
-        color: var(--secondary); /* 用亮藍色強調 */
+        color: var(--secondary);
         margin: 0 0 0.5rem 0;
         display: flex;
         align-items: center;
@@ -179,21 +177,12 @@
         color: white;
         box-shadow: 0 10px 20px -5px rgba(59, 130, 246, 0.5);
       }
-      .btn-primary:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 15px 30px -5px rgba(59, 130, 246, 0.7);
-      }
 
       .btn-outline {
         border: 2px solid rgba(255, 255, 255, 0.2);
         color: white;
       }
-      .btn-outline:hover {
-        border-color: white;
-        background: rgba(255, 255, 255, 0.1);
-      }
 
-      /* 照片區 */
       .hero-image-container {
         position: relative;
         height: 600px;
@@ -209,152 +198,6 @@
         border-radius: 20px;
         box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.5);
         border: 1px solid rgba(255, 255, 255, 0.1);
-        mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
-        -webkit-mask-image: linear-gradient(
-          to bottom,
-          black 80%,
-          transparent 100%
-        );
-      }
-
-      /* --- 一般區塊 --- */
-      section {
-        padding: 6rem 5%;
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-      h2 {
-        font-size: 2.5rem;
-        color: var(--primary);
-        margin-bottom: 3rem;
-        position: relative;
-        display: inline-block;
-      }
-      h2::after {
-        content: "";
-        display: block;
-        width: 100%;
-        height: 5px;
-        background: var(--secondary);
-        margin-top: 0.5rem;
-        border-radius: 5px;
-        opacity: 0.3;
-      }
-
-      /* --- About --- */
-      .about-wrapper {
-        display: grid;
-        grid-template-columns: 1.5fr 1fr;
-        gap: 4rem;
-        background: white;
-        padding: 3rem;
-        border-radius: 24px;
-        box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.05);
-      }
-      .rank-item {
-        display: flex;
-        justify-content: space-between;
-        padding: 1rem 0;
-        border-bottom: 1px solid #f1f5f9;
-      }
-      .rank-value {
-        font-weight: 800;
-        color: var(--primary);
-        font-size: 1.2rem;
-      }
-      .rank-highlight {
-        color: var(--accent);
-      }
-
-      /* --- Courses --- */
-      .courses-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        gap: 2rem;
-        margin-bottom: 3rem;
-      }
-      .course-card {
-        background: white;
-        padding: 2rem;
-        border-radius: 16px;
-        border: 1px solid var(--border);
-        transition: all 0.3s;
-        overflow: hidden;
-      }
-      .course-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.1);
-        border-color: var(--secondary);
-      }
-      .course-card.perfect {
-        border-top: 6px solid var(--accent);
-      }
-      .course-card.high {
-        border-top: 6px solid var(--secondary);
-      }
-      .course-score {
-        font-size: 3.5rem;
-        font-weight: 800;
-        color: var(--primary);
-        line-height: 1;
-        margin-bottom: 0.5rem;
-        letter-spacing: -2px;
-      }
-      .course-score span {
-        font-size: 1.2rem;
-        color: #94a3b8;
-        font-weight: 500;
-        letter-spacing: 0;
-        margin-left: 5px;
-      }
-      .course-name {
-        font-size: 1.1rem;
-        font-weight: 700;
-        color: #475569;
-      }
-      .transcript-btn {
-        display: block;
-        text-align: center;
-        background: var(--primary);
-        color: white;
-        padding: 1.5rem;
-        border-radius: 12px;
-        text-decoration: none;
-        font-weight: bold;
-        transition: background 0.3s;
-      }
-      .transcript-btn:hover {
-        background: #1e293b;
-      }
-
-      /* --- Skills --- */
-      .skills-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 2rem;
-      }
-      .skill-category {
-        background: white;
-        padding: 2rem;
-        border-radius: 16px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-        border-top: 4px solid var(--secondary);
-        text-align: center;
-      }
-      .skill-icon {
-        font-size: 2.5rem;
-        color: var(--primary);
-        margin-bottom: 1rem;
-      }
-      .skill-list {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-      }
-      .skill-list li {
-        margin-bottom: 0.5rem;
-        color: #475569;
-        font-weight: 600;
       }
 
       /* --- Projects --- */
@@ -365,14 +208,10 @@
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
         margin-bottom: 3rem;
         display: grid;
-        grid-template-columns: 1fr;
+        grid-template-columns: 400px 1fr;
         border: 1px solid var(--border);
       }
-      @media (min-width: 900px) {
-        .project-card {
-          grid-template-columns: 400px 1fr;
-        }
-      }
+
       .project-img {
         min-height: 300px;
         background-size: cover;
@@ -381,112 +220,38 @@
         align-items: center;
         justify-content: center;
       }
-      .img-quantum {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      }
-      .img-mwd {
-        background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
-      }
-      .project-content {
-        padding: 3rem;
-      }
-      .project-tags {
-        display: flex;
-        flex-wrap: wrap; /* ✔ 標籤自動換行（不擠爆） */
-        gap: 8px;
+
+      /* *************************************************
+         🟦🟦🟦【手機排版修正：防止圖片被裁切】🟦🟦🟦
+         ************************************************* */
+      @media (max-width: 900px) {
+        .project-card {
+          grid-template-columns: 1fr !important;
+        }
+
+        .project-img {
+          min-height: 250px !important;
+          background-size: contain !important;
+          background-repeat: no-repeat !important;
+          background-position: center !important;
+        }
       }
 
-      .project-tags span {
-        white-space: nowrap; /* ✔ 不切字 */
-        word-break: keep-all; /* ✔ 英文不拆字 */
-        background: #f1f5f9;
-        padding: 5px 15px;
-        border-radius: 20px;
-        font-size: 0.9rem;
-        font-weight: 600;
-        color: #475569;
-      }
-
-      /* --- Roadmap --- */
-      .roadmap-box {
-        background: white;
-        padding: 3rem;
-        border-radius: 20px;
-        border-left: 5px solid var(--accent);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-      }
-      .roadmap-step {
-        margin-bottom: 2rem;
-        position: relative;
-        padding-left: 2rem;
-      }
-      .roadmap-step::before {
-        content: "●";
-        color: var(--accent);
-        position: absolute;
-        left: 0;
-        font-size: 1.2rem;
-      }
-      .roadmap-title {
-        font-weight: 800;
-        color: var(--primary);
-        margin-bottom: 0.5rem;
-        display: block;
-      }
-
-      /* --- Timeline --- */
-      .timeline-item {
-  display: grid;
-  grid-template-columns: 200px 1fr; /* 左 200px 黑框／右側文字 */
-  gap: 20px;
-  margin-bottom: 35px;
-  align-items: start;
-}
-
-.timeline-date {
-  background: #0A2540;
-  color: white;
-  padding: 12px 15px;
-  border-radius: 10px;
-  font-weight: 600;
-  text-align: center;
-}
-
-.timeline-content {
-  line-height: 1.6;
-}
-
-
-      /* --- RWD --- */
+      /* --- RWD general --- */
       @media (max-width: 900px) {
         .hero-container {
-          display: flex;
           flex-direction: column;
+          display: flex;
         }
         .hero-image-container {
           order: 1;
           height: 400px;
-          margin-bottom: 2rem;
           width: 100%;
+          margin-bottom: 2rem;
         }
         .hero-text {
           order: 2;
           text-align: center;
-        }
-        .school-title {
-          justify-content: center;
-          font-size: 1.5rem;
-        } /* 手機版置中且字體稍微調小 */
-        .hero h1 {
-          font-size: 3rem;
-        }
-        .hero-badges,
-        .btn-group {
-          justify-content: center;
-        }
-        .about-wrapper {
-          grid-template-columns: 1fr;
-          padding: 2rem;
         }
         nav ul {
           display: none;
@@ -501,7 +266,6 @@
         <li><a href="#about">About</a></li>
         <li><a href="#academics">Academics</a></li>
         <li><a href="#research">Research</a></li>
-        <!-- <li><a href="#skills">Skills</a></li> -->
         <li><a href="#experience">Experience</a></li>
       </ul>
     </nav>
@@ -571,27 +335,31 @@
             <strong>真實員工數據與現實條件</strong>，利用
             <strong>CGA (Compal GPU Annealer)</strong>
             解決智慧排班的組合最佳化問題。
-            <br />
-            <br />
+            <br /><br />
             目前，我正在將另一項關於利用量子啟發式方法解決課程排程問題的成果，準備<strong>投稿至學術期刊</strong>。
           </p>
         </div>
+
         <div class="stats">
           <h3 style="margin-top: 0; color: var(--primary)">
             Academic Performance
           </h3>
+
           <div class="rank-item">
             <span>系排名 (Dept. Rank)</span>
             <span class="rank-value">5 / 86</span>
           </div>
+
           <div class="rank-item">
             <span>班排名 (Class Rank)</span>
             <span class="rank-value">4 / 42</span>
           </div>
+
           <div class="rank-item">
             <span>學業平均 (GPA)</span>
             <span class="rank-value">91.55</span>
           </div>
+
           <div class="rank-item" style="border: none">
             <span>榮譽 (Award)</span>
             <span class="rank-value rank-highlight"
@@ -609,6 +377,7 @@
       </p>
 
       <div class="courses-grid">
+        <!-- 課程卡片（全部保留） -->
         <div class="course-card perfect">
           <div class="course-score">100<span>/100</span></div>
           <div class="course-name">
@@ -706,22 +475,7 @@
             min-height: 450px;
             padding: 0;
           "
-        >
-          <div
-            style="
-              background: rgba(0, 0, 0, 0);
-              width: 100%;
-              height: 100%;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              font-size: 2rem;
-              font-weight: bold;
-              color: white;
-              text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
-            "
-          ></div>
-        </div>
+        ></div>
 
         <div class="project-content">
           <span
@@ -735,16 +489,21 @@
             Engineering 2025</span
           >
           <h3
-            style="margin-top: 10px; font-size: 1.5rem; color: var(--primary)"
+            style="
+              margin-top: 10px;
+              font-size: 1.5rem;
+              color: var(--primary);
+            "
           >
-            Quantum-inspired Optimization and QAOA
- Validation for Cost-effective Fertilizer Allocation in
- Precision Agriculture
+            Quantum-inspired Optimization and QAOA Validation for Cost-effective
+            Fertilizer Allocation in Precision Agriculture
           </h3>
+
           <p style="color: #64748b; margin-bottom: 1.5rem">
             針對農業施肥過量問題，將肥料配置轉化為 QUBO 數學模型。利用 Compal
             GPU Annealer (CGA) 進行求解，實現成本最小化。
           </p>
+
           <div class="project-tags">
             <span>Python</span>
             <span>QUBO(Quadratic Unconstrained Binary Optimization)</span>
@@ -768,31 +527,23 @@
               border-radius: 8px;
               text-decoration: none;
               font-weight: 600;
-              transition: background 0.3s, transform 0.2s;
             "
-            onmouseover="this.style.background='#3673d3'; this.style.transform='translateY(-2px)'"
-            onmouseout="this.style.background='var(--secondary)'; this.style.transform='translateY(0)'"
           >
             <i class="fas fa-file-pdf"></i> 檢視完整論文
           </a>
         </div>
       </div>
 
+      <!-- 第二個 Project Card：麥味登 -->
       <div class="project-card">
         <div class="project-img img-mwd" style="gap: 20px">
           <i
             class="fas fa-store fa-4x"
-            style="
-              color: rgba(255, 255, 255, 0.95);
-              filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
-            "
+            style="color: rgba(255, 255, 255, 0.95)"
           ></i>
           <i
             class="fas fa-calendar-days fa-4x"
-            style="
-              color: rgba(255, 255, 255, 0.95);
-              filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
-            "
+            style="color: rgba(255, 255, 255, 0.95)"
           ></i>
         </div>
 
@@ -802,15 +553,14 @@
               color: var(--secondary);
               font-weight: 800;
               font-size: 1.5rem;
-              text-transform: uppercase;
             "
             >Industry Cooperation</span
           >
-          <h3
-            style="margin-top: 10px; font-size: 1.5rem; color: var(--primary)"
-          >
+
+          <h3 style="margin-top: 10px; font-size: 1.5rem; color: var(--primary)">
             Smart Scheduling System
           </h3>
+
           <p style="color: #64748b; margin-bottom: 1.5rem">
             與連鎖早餐店「麥味登」產學合作。考量勞基法規與技能配置，利用優化演算法自動生成公平排班表。
           </p>
@@ -831,11 +581,7 @@
                   style="
                     width: 100%;
                     max-width: 260px;
-                    height: auto;
                     border-radius: 8px;
-                    border: 1px solid #e2e8f0;
-                    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-                    transition: transform 0.2s;
                   "
                 />
               </a>
@@ -844,7 +590,6 @@
                   font-size: 0.85rem;
                   color: #64748b;
                   margin-top: 10px;
-                  margin-bottom: 0;
                   font-weight: bold;
                 "
               >
@@ -860,11 +605,7 @@
                   style="
                     width: 100%;
                     max-width: 260px;
-                    height: auto;
                     border-radius: 8px;
-                    border: 1px solid #e2e8f0;
-                    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-                    transition: transform 0.2s;
                   "
                 />
               </a>
@@ -873,7 +614,6 @@
                   font-size: 0.85rem;
                   color: #64748b;
                   margin-top: 10px;
-                  margin-bottom: 0;
                   font-weight: bold;
                 "
               >
@@ -883,13 +623,15 @@
           </div>
 
           <div class="project-tags">
-            <span>Optimization</span
-            ><span>QUBO(Quadratic Unconstrained Binary Optimization)</span
-            ><span>CGA(Compal GPU Annealer)</span><span>API Integration</span>
+            <span>Optimization</span>
+            <span>QUBO</span>
+            <span>CGA</span>
+            <span>API Integration</span>
           </div>
         </div>
       </div>
 
+      <!-- 第三個 Project：排課 -->
       <div class="project-card">
         <div
           class="project-img"
@@ -900,17 +642,11 @@
         >
           <i
             class="fas fa-scroll fa-4x"
-            style="
-              color: rgba(255, 255, 255, 0.95);
-              filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
-            "
+            style="color: rgba(255, 255, 255, 0.95)"
           ></i>
           <i
             class="fas fa-clipboard-list fa-4x"
-            style="
-              color: rgba(255, 255, 255, 0.95);
-              filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
-            "
+            style="color: rgba(255, 255, 255, 0.95)"
           ></i>
         </div>
 
@@ -920,165 +656,78 @@
               color: var(--accent);
               font-weight: 800;
               font-size: 1.5rem;
-              text-transform: uppercase;
             "
             >Manuscript in Preparation for Journal Submission</span
           >
-          <h3
-            style="margin-top: 10px; font-size: 1.5rem; color: var(--primary)"
-          >
+
+          <h3 style="margin-top: 10px; font-size: 1.5rem; color: var(--primary)">
             A Rigorous QUBO Formulation and Quantum-Inspired Annealing Approach
             for Multi-Student Course Timetabling
           </h3>
+
           <p style="color: #64748b; margin-bottom: 1.5rem">
             本實驗針對大學課程排程問題的複雜性，提出一種混合量子啟發式方法，旨在最小化時間衝突與最大化資源利用率，並與傳統演算法和其他量子演算法(SA、QAOA、SQA)進行求解效率與品質的比較。
           </p>
+
           <div class="project-tags">
-            <span>SA (Simulated Annealing)</span>
-            <span>QIA (Quantum-inspired Annealing)</span>
-            <span>QUBO (Quadratic Unconstrained Binary Optimization)</span>
-            <span>CGA (Compal GPU Annealer)</span>
-            <span>QAOA (Quantum Approximate Optimization Algorithm)</span>
-
+            <span>SA</span>
+            <span>QIA</span>
+            <span>QUBO</span>
+            <span>CGA</span>
+            <span>QAOA</span>
             <span>Combinatorial Optimization</span>
-
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- <section id="skills" style="background: white">
-      <h2>Technical Skills</h2>
-      <div class="skills-grid">
-        <div class="skill-category">
-          <div class="skill-icon"><i class="fas fa-code"></i></div>
-          <h3 style="margin-bottom: 1rem">Languages</h3>
-          <ul class="skill-list">
-            <li>Python</li>
-            <li>C / C++</li>
-            <li>LaTeX (Academic Writing)</li>
-            <li>SQL</li>
-          </ul>
-        </div>
-        <div class="skill-category">
-          <div class="skill-icon"><i class="fas fa-server"></i></div>
-          <h3 style="margin-bottom: 1rem">System & Tools</h3>
-          <ul class="skill-list">
-            <li>Linux Administration</li>
-            <li>Git / GitHub</li>
-            <li>Docker</li>
-            <li>VS Code</li>
-          </ul>
-        </div>
-        <div class="skill-category">
-          <div class="skill-icon"><i class="fas fa-brain"></i></div>
-          <h3 style="margin-bottom: 1rem">Research Areas</h3>
-          <ul class="skill-list">
-            <li>Quantum Annealing</li>
-            <li>QUBO Optimization</li>
-          </ul>
-        </div>
-      </div>
-    </section> -->
-
     <section id="experience">
-  <h2>Experience & Honors</h2>
-
-  
-  <div style="max-width: 800px; margin: 0 auto">
-
-    <div class="timeline-item">
-      <div class="timeline-date">2025 (In Progress)</div>
-      <div class="timeline-content">
-
-          <h4>Journal Manuscript Preparation</h4>
-          <span style="font-size: 0.95rem; font-weight: 600;">
-            A Rigorous QUBO Formulation and
-            Quantum-Inspired Annealing Approach for
-            Multi-Student Course Timetabling
-          </span>
-       
-        <p>
-          準備投稿之期刊論文，延伸多學生課程排程 QUBO 模型與
-          Quantum-Inspired Annealing 實驗結果，聚焦於嚴謹數學建模與跨演算法比較。
-        </p>
-      </div>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-date">2024 - Present</div>
-      <div class="timeline-content">
-        <h4>Undergraduate Research Assistant</h4>
-        <p>
-          國立屏東大學 |
-          協助執行量子計算相關研究計畫，負責演算法實作與數據分析。
-        </p>
-      </div>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-date">2024-2025 (Junior Year)</div>
-      <div class="timeline-content">
-        <h4>Academic Excellence Award (1st Place)</h4>
-        <p>書卷獎第一名 | 該學期學業成績表現優異，班級排名 Top 1。</p>
-      </div>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-date">2025</div>
-      <div class="timeline-content">
-        <h4>Exhibitor @ Great South AI Expo</h4>
-        <p>
-          大南方 AI 研發亮點成果展 |
-          展示實驗室研究成果，與產業界人士進行技術交流。
-        </p>
-      </div>
-    </div>
-
-   
-    
-
-  </div>
-</section>
-
-
-    <!-- <section id="roadmap" style="background-color: #f8fafc">
-      <h2>Graduate Research Plan</h2>
-      <p style="margin-bottom: 2rem">
-        基於過去在資源配置優化的經驗，我計畫在研究所階段延伸至 AI 領域：
-      </p>
-
-      <div class="roadmap-box">
-        <h3
-          style="
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            color: var(--primary);
-          "
-        >
-          主題：結合 AI 技術的資源配置優化與永續發展
-        </h3>
-
-        <div class="roadmap-step">
-          <span class="roadmap-title"
-            >Phase 1: Deep Reinforcement Learning (DRL)</span
-          >
-          研究如何利用強化學習 (RL)
-          代理人，動態調整量子退火參數，以提升在複雜環境下的求解品質。
+      <h2>Experience & Honors</h2>
+      <div style="max-width: 800px; margin: 0 auto">
+        <div class="timeline-item">
+          <div class="timeline-date">2025 (In Progress)</div>
+          <div class="timeline-content">
+            <h4>Journal Manuscript Preparation</h4>
+            <span style="font-size: 0.95rem; font-weight: 600">
+              A Rigorous QUBO Formulation and Quantum-Inspired Annealing Approach
+              for Multi-Student Course Timetabling
+            </span>
+            <p>
+              準備投稿之期刊論文，延伸多學生課程排程 QUBO 模型與
+              Quantum-Inspired Annealing 實驗結果，聚焦於嚴謹數學建模與跨演算法比較。
+            </p>
+          </div>
         </div>
 
-        <div class="roadmap-step">
-          <span class="roadmap-title">Phase 2: Hybrid Optimization Models</span>
-          開發結合「傳統啟發式演算法」與「量子計算」的混合模型，解決大規模工業級排程問題（如智慧物流、電路佈局）。
+        <div class="timeline-item">
+          <div class="timeline-date">2024 - Present</div>
+          <div class="timeline-content">
+            <h4>Undergraduate Research Assistant</h4>
+            <p>
+              國立屏東大學 | 協助執行量子計算相關研究計畫，負責演算法實作與數據分析。
+            </p>
+          </div>
         </div>
 
-        <div class="roadmap-step">
-          <span class="roadmap-title"
-            >Phase 3: Real-world Application Verification</span
-          >
-          利用模擬數據與真實案例測試，驗證 AI
-          優化方法在效率與成本控制上是否顯著優於傳統規則。
+        <div class="timeline-item">
+          <div class="timeline-date">2024-2025 (Junior Year)</div>
+          <div class="timeline-content">
+            <h4>Academic Excellence Award (1st Place)</h4>
+            <p>書卷獎第一名 | 該學期學業成績表現優異，班級排名 Top 1。</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">2025</div>
+          <div class="timeline-content">
+            <h4>Exhibitor @ Great South AI Expo</h4>
+            <p>
+              大南方 AI 研發亮點成果展 | 展示實驗室研究成果，與產業界人士進行技術交流。
+            </p>
+          </div>
         </div>
       </div>
-    </section> -->
+    </section>
 
     <footer
       id="contact"
