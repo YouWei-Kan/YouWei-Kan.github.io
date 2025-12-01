@@ -522,6 +522,22 @@
         .project-content > div[style*="grid-template-columns: 1fr 1fr"] {
             grid-template-columns: 1fr !important;
         }
+        
+        /* >>> 新增修正：長標題自動換行與字體縮小 <<< */
+        .project-card .project-content span,
+        .project-card .project-content h3 {
+            word-break: break-word; 
+            overflow-wrap: break-word;
+        }
+
+        .project-card .project-content span {
+            font-size: 1.1rem !important; /* 將 1.5rem 縮小 */
+            line-height: 1.3;
+        }
+        .project-card .project-content h3 {
+            font-size: 1.3rem !important; /* 將 1.5rem 縮小 */
+            line-height: 1.3;
+        }
       }
       
       /* RWD Fixes 3: Experience 區塊 (Timeline) 修正 */
@@ -735,9 +751,6 @@
           <div class="course-score">97<span>/100</span></div>
           <div class="course-name">
             <i class="fas fa-terminal"></i> System Programming
-          </div>
-          <p style="color: #94a3b8; font-size: 0.9rem; margin: 5px 0 0">
-            系統程式
           </p>
         </div>
       </div>
