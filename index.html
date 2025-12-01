@@ -458,6 +458,46 @@
 
 
       /* --- RWD --- */
+      /* === 修正全部圖片、背景、Grid 在手機的裁切問題 === */
+@media (max-width: 600px) {
+  
+  /* 讓所有圖片不會超出螢幕 */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Project 圖片統一改成寬滿、比例保留、不裁切 */
+  .project-img {
+    background-size: contain !important;
+    background-position: center !important;
+    min-height: 220px !important;
+  }
+
+  /* Hero 大頭照改成 auto 高度 */
+  .hero-image-container {
+    height: auto !important;
+  }
+  .hero-image {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+    mask-image: none !important;
+    -webkit-mask-image: none !important;
+  }
+
+  /* 修正 grid (避免左 400px 直接被切掉) */
+  .project-card {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* 避免任何元素造成水平滾動 */
+  body, html {
+    overflow-x: hidden !important;
+  }
+}
+
+      
       @media (max-width: 900px) {
         .hero-container {
           display: flex;
@@ -1104,3 +1144,4 @@
     </footer>
   </body>
 </html>
+
