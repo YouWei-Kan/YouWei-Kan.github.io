@@ -71,6 +71,17 @@
         color: var(--secondary);
       }
 
+      /* 新增：手機版選單按鈕，預設隱藏 */
+      .menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        color: var(--primary);
+        cursor: pointer;
+        padding: 0;
+      }
+
       /* --- Hero Section: 左右分割設計 (圖左文右) --- */
       .hero {
         min-height: 90vh; /* 佔滿整個螢幕高度 */
@@ -436,26 +447,25 @@
 
       /* --- Timeline --- */
       .timeline-item {
-  display: grid;
-  grid-template-columns: 200px 1fr; /* 左 200px 黑框／右側文字 */
-  gap: 20px;
-  margin-bottom: 35px;
-  align-items: start;
-}
+        display: grid;
+        grid-template-columns: 200px 1fr; /* 左 200px 黑框／右側文字 */
+        gap: 20px;
+        margin-bottom: 35px;
+        align-items: start;
+      }
 
-.timeline-date {
-  background: #0A2540;
-  color: white;
-  padding: 12px 15px;
-  border-radius: 10px;
-  font-weight: 600;
-  text-align: center;
-}
+      .timeline-date {
+        background: #0a2540;
+        color: white;
+        padding: 12px 15px;
+        border-radius: 10px;
+        font-weight: 600;
+        text-align: center;
+      }
 
-.timeline-content {
-  line-height: 1.6;
-}
-
+      .timeline-content {
+        line-height: 1.6;
+      }
 
       /* --- RWD --- */
       @media (max-width: 900px) {
@@ -488,8 +498,48 @@
           grid-template-columns: 1fr;
           padding: 2rem;
         }
+        
+        /* RWD Fixes 1: 導覽列 */
         nav ul {
           display: none;
+        }
+        .menu-toggle {
+            display: block; /* 顯示漢堡選單按鈕 */
+        }
+        
+        /* RWD Fixes 2: Research 區塊圖片修正 */
+        .project-card .project-img {
+            min-height: 250px !important; /* 手機版高度降低 */
+            background-size: cover !important; /* 確保圖片能覆蓋整個區域 */
+        }
+        
+        /* 調整專案內容的間距 */
+        .project-card .project-content {
+            padding: 1.5rem;
+        }
+
+        /* 確保第二個專案內部的 QUBO/Schedule 圖片在手機上垂直堆疊 */
+        .project-content > div[style*="grid-template-columns: 1fr 1fr"] {
+            grid-template-columns: 1fr !important;
+        }
+      }
+      
+      /* RWD Fixes 3: Experience 區塊 (Timeline) 修正 */
+      @media (max-width: 768px) {
+        .timeline-item {
+            grid-template-columns: 1fr; /* 改為單欄垂直堆疊 */
+            gap: 10px; /* 縮小間距 */
+            margin-bottom: 25px; /* 縮小下方間距 */
+        }
+
+        .timeline-date {
+            max-width: 150px; /* 日期寬度限制，視覺上更好 */
+            text-align: left; /* 日期靠左對齊 */
+            padding: 8px 12px;
+        }
+
+        .timeline-content h4 {
+            margin-top: 0;
         }
       }
     </style>
@@ -497,11 +547,13 @@
   <body>
     <nav>
       <a href="#" class="logo">You-Wei Kan</a>
+      <button class="menu-toggle" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
       <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#academics">Academics</a></li>
         <li><a href="#research">Research</a></li>
-        <!-- <li><a href="#skills">Skills</a></li> -->
         <li><a href="#experience">Experience</a></li>
       </ul>
     </nav>
@@ -945,40 +997,6 @@
       </div>
     </section>
 
-    <!-- <section id="skills" style="background: white">
-      <h2>Technical Skills</h2>
-      <div class="skills-grid">
-        <div class="skill-category">
-          <div class="skill-icon"><i class="fas fa-code"></i></div>
-          <h3 style="margin-bottom: 1rem">Languages</h3>
-          <ul class="skill-list">
-            <li>Python</li>
-            <li>C / C++</li>
-            <li>LaTeX (Academic Writing)</li>
-            <li>SQL</li>
-          </ul>
-        </div>
-        <div class="skill-category">
-          <div class="skill-icon"><i class="fas fa-server"></i></div>
-          <h3 style="margin-bottom: 1rem">System & Tools</h3>
-          <ul class="skill-list">
-            <li>Linux Administration</li>
-            <li>Git / GitHub</li>
-            <li>Docker</li>
-            <li>VS Code</li>
-          </ul>
-        </div>
-        <div class="skill-category">
-          <div class="skill-icon"><i class="fas fa-brain"></i></div>
-          <h3 style="margin-bottom: 1rem">Research Areas</h3>
-          <ul class="skill-list">
-            <li>Quantum Annealing</li>
-            <li>QUBO Optimization</li>
-          </ul>
-        </div>
-      </div>
-    </section> -->
-
     <section id="experience">
   <h2>Experience & Honors</h2>
 
@@ -1039,46 +1057,6 @@
   </div>
 </section>
 
-
-    <!-- <section id="roadmap" style="background-color: #f8fafc">
-      <h2>Graduate Research Plan</h2>
-      <p style="margin-bottom: 2rem">
-        基於過去在資源配置優化的經驗，我計畫在研究所階段延伸至 AI 領域：
-      </p>
-
-      <div class="roadmap-box">
-        <h3
-          style="
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            color: var(--primary);
-          "
-        >
-          主題：結合 AI 技術的資源配置優化與永續發展
-        </h3>
-
-        <div class="roadmap-step">
-          <span class="roadmap-title"
-            >Phase 1: Deep Reinforcement Learning (DRL)</span
-          >
-          研究如何利用強化學習 (RL)
-          代理人，動態調整量子退火參數，以提升在複雜環境下的求解品質。
-        </div>
-
-        <div class="roadmap-step">
-          <span class="roadmap-title">Phase 2: Hybrid Optimization Models</span>
-          開發結合「傳統啟發式演算法」與「量子計算」的混合模型，解決大規模工業級排程問題（如智慧物流、電路佈局）。
-        </div>
-
-        <div class="roadmap-step">
-          <span class="roadmap-title"
-            >Phase 3: Real-world Application Verification</span
-          >
-          利用模擬數據與真實案例測試，驗證 AI
-          優化方法在效率與成本控制上是否顯著優於傳統規則。
-        </div>
-      </div>
-    </section> -->
 
     <footer
       id="contact"
